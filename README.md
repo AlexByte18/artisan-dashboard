@@ -1,73 +1,169 @@
-# React + TypeScript + Vite
+# Artisan Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern administrative dashboard for product management and authentication. Built with **React 19**, **TypeScript**, **Tailwind CSS**, and **Vite**.
 
-Currently, two official plugins are available:
+## 📋 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Artisan Dashboard is a complete web administration application that provides:
 
-## React Compiler
+- 🔐 **Secure authentication system**
+- 📦 **Product management** with intuitive interface
+- 🎨 **Responsive design** based on Tailwind CSS
+- ⚡ **High performance** with Vite and React 19
+- 🔄 **State management** with Zustand
+- 📡 **Data management** with TanStack Query
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+### Authentication
+- Secure login
+- Session management
+- Backend API integration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Product Management
+- Product listing
+- Create, edit, and delete products
+- Search and filtering
+- Pagination
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### User Interface
+- Reusable components
+- Consistent theme with Radix UI
+- Responsive design
+- Radix UI Icons iconography
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technology Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Category | Technology |
+|----------|-----------|
+| **Framework** | React 19 |
+| **Language** | TypeScript 5.9 |
+| **Build Tool** | Vite 7 |
+| **Styles** | Tailwind CSS + Radix Themes |
+| **State Management** | Zustand |
+| **Data Fetching** | Axios + TanStack Query |
+| **Routing** | React Router 7 |
+| **UI Components** | Radix UI |
+| **Linting** | ESLint 9 |
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Steps
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd artisan-dashboard
+
+# Install dependencies
+npm install
+
+# Configure environment variables (if needed)
+# cp .env.example .env
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏃 Running the Application
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Development
+```bash
+npm run dev
 ```
+The application will run at `http://localhost:5173`
+
+### Production Build
+```bash
+npm run build
+```
+
+### Preview Build
+```bash
+npm run preview
+```
+
+### Linting
+```bash
+npm run lint
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/          # Images and static resources
+├── core/            # Core logic (API, services)
+├── features/        # Features by module
+│   ├── auth/        # Authentication
+│   ├── products/    # Product management
+│   └── shared/      # Shared components
+├── helpers/         # Utility functions
+├── lib/             # Libraries and configurations
+├── main.tsx         # Entry point
+└── ArtisanApp.tsx   # Root component
+```
+
+## 🔐 Authentication
+
+Authentication is managed through:
+- **Zustand** for global state
+- **LocalStorage** for persistence
+- **Backend API** for validation
+
+## 📡 API Integration
+
+Uses **Axios** + **TanStack Query** for:
+- Data fetching
+- Automatic caching
+- Error handling
+- State synchronization
+
+## 🎨 Styling
+
+- **Tailwind CSS** for utilities
+- **Radix Themes** for base components
+- **CSS Modules** for specific styles
+
+## 📝 Code Conventions
+
+- Components with PascalCase
+- Functions/variables with camelCase
+- Types/Interfaces with PascalCase (optionally prefixed with `I`)
+- Custom hooks with `use` prefix
+
+## 🚦 Version Control
+
+Main branch: `develop`
+
+To contribute:
+1. Create a feature branch: `git checkout -b feature/new-feature`
+2. Make commits: `git commit -m "feat: description"`
+3. Push: `git push origin feature/new-feature`
+4. Create a Pull Request
+
+## 🤝 Contributing
+
+Contributions are welcome. Please:
+1. Fork the project
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 👤 Author
+
+**Artisan Development Team**
+
+## 📞 Contact
+
+For questions or support, contact the development team.
+
+---
+
+**Last updated:** November 2025
